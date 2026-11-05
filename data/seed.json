@@ -1,0 +1,14 @@
+{
+  "_note": "DEMO verisi. Gerçek bakım sırası, ekip ve bağımlılıklar değildir; onaylı AMM/task card yerine geçmez.",
+  "tasks": [
+    { "id": "CAB-01", "title": "Kabin bölgesi tanımlama", "zone": "Kabin", "team": "Kabin", "level": "kabin-ici", "prerequisites": [], "status": "Bekliyor", "reference": "DEMO-TC-01" },
+    { "id": "CAB-02", "title": "Kabin eşyalarının korunması", "zone": "Kabin", "team": "Kabin", "level": "kabin-ici", "prerequisites": ["CAB-01"], "status": "Bekliyor", "reference": "DEMO-TC-02" },
+    { "id": "CAB-03", "title": "Koltuk grubu sökümü", "zone": "Kabin", "team": "Kabin", "level": "kabin-ici", "prerequisites": ["CAB-02"], "status": "Bekliyor", "reference": "DEMO-TC-03" },
+    { "id": "CAB-04", "title": "Galley/lavabo sökümü", "zone": "Kabin", "team": "Kabin + Servis", "level": "kabin-ici", "prerequisites": ["CAB-02", "EXT-02"], "status": "Bekliyor", "reference": "DEMO-TC-04" },
+    { "id": "CAB-05", "title": "Tavan/yan duvar donanımları", "zone": "Kabin", "team": "Kabin + Elektrik", "level": "kabin-ici", "prerequisites": ["CAB-02", "EXT-02"], "status": "Bekliyor", "reference": "DEMO-TC-05" },
+    { "id": "CAB-06", "title": "Zemin ve alt erişim", "zone": "Kabin", "team": "Kabin", "level": "kabin-ici", "prerequisites": ["CAB-03"], "status": "Bekliyor", "reference": "DEMO-TC-06" },
+    { "id": "EXT-01", "title": "Komşu bölge işlemleri", "zone": "Dış", "team": "Diğer ekip", "level": "kabin-disi", "prerequisites": [], "status": "Bekliyor", "reference": "DEMO-TC-E1" },
+    { "id": "EXT-02", "title": "İlgili dış panel işlemleri", "zone": "Dış", "team": "Diğer ekip", "level": "kabin-disi", "prerequisites": ["EXT-01"], "status": "Bekliyor", "reference": "DEMO-TC-E2" },
+    { "id": "QA-01", "title": "Ortak söküm kontrolü", "zone": "Genel", "team": "Koordinasyon", "level": "kontrol", "prerequisites": ["CAB-03", "CAB-04", "CAB-05", "CAB-06", "EXT-02"], "status": "Bekliyor", "reference": "DEMO-QA" }
+  ]
+}

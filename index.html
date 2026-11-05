@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bakım Takip — Bağımlılık Haritası</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.30.2/cytoscape.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape-dagre/2.5.0/cytoscape-dagre.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Bakım Bağımlılık Haritası</h1>
+    <nav id="levels" aria-label="Seviyeler"></nav>
+    <div class="actions">
+      <button id="btn-export" type="button">Dışa aktar (JSON)</button>
+      <label class="btn">İçe aktar<input id="file-import" type="file" accept="application/json" hidden></label>
+      <button id="btn-csv" type="button">Rapor (CSV)</button>
+      <button id="btn-reset" type="button">Demo verisine dön</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="diagram-wrap">
+      <div id="cy" aria-label="Bağımlılık diyagramı"></div>
+      <div class="legend">
+        <span class="sw s-waiting"></span>Bekliyor
+        <span class="sw s-ready"></span>Hazır
+        <span class="sw s-progress"></span>Devam
+        <span class="sw s-done"></span>Tamamlandı
+        <span class="sw s-blocked"></span>Bloke
+      </div>
+    </section>
+
+    <aside class="side">
+      <section id="progress" aria-live="polite"></section>
+      <section id="panel" class="panel"><p class="muted">Diyagramda bir göreve dokunun.</p></section>
+      <section>
+        <h2>Görevler</h2>
+        <ul id="task-list" class="task-list"></ul>
+      </section>
+    </aside>
+  </main>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
